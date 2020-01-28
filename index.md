@@ -4,7 +4,8 @@
 
 ### Category Name 1 
 
-[Project 1 Title](/projects/project1)
+[Project 1: Georeferencing UMBC's Campus](/projects/project1)
+Here's some text that describes what I did using ArcMap and satellite imagery.
 <img src="images/L2P2_thumb.png?raw=true"/>
 
 ---
