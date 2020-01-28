@@ -5,7 +5,7 @@
 ### Category Name 1 
 
 [Project 1 Title](/projects/project1)
-<img src="images/L2P2_thumb.jpg?raw=true"/>
+<img src="images/L2P2_thumb.png?raw=true"/>
 
 ---
 [Project 2 Title](/pdf/sample_presentation.pdf)
