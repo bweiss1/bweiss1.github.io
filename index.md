@@ -9,26 +9,8 @@ Here's some text that describes what I did using ArcMap and satellite imagery.
 <img src="images/L2P2_thumb.png?raw=true"/>
 
 ---
-[Project 2 Title](/pdf/sample_presentation.pdf)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
-
----
-[Project 3 Title](http://example.com/)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
-
----
-
-### Category Name 2
-
-- [Project 1 Title](http://example.com/)
-- [Project 2 Title](http://example.com/)
-- [Project 3 Title](http://example.com/)
-- [Project 4 Title](http://example.com/)
-- [Project 5 Title](http://example.com/)
-
----
-
-
+[Project 2: ](/projects/project1)
+<img src="images/P4_thumb.PNG?raw=true"/>
 
 
 ---
