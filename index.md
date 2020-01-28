@@ -2,7 +2,7 @@
 
 ---
 
-### Category Name 1 
+### Map Works 
 
 [Project 1: Georeferencing UMBC's Campus](/projects/project1)
 Here's some text that describes what I did using ArcMap and satellite imagery.
