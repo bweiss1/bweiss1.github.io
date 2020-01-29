@@ -5,7 +5,7 @@
 ### Map Works 
 
 [Project 1: Georeferencing UMBC's Campus](/)
-Here's some text that describes what I did using ArcMap and satellite imagery.
+Using satellite imagery of UMBC campus and ArcMap I identified and classified some different types of infrastructure located on campus. 
 <img src="images/L2P2_thumb.png?raw=true"/>
 
 ---
