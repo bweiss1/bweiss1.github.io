@@ -1,6 +1,6 @@
 ## Project 1
 
-**Description** blah blah
+**Description:** blah blah
 
 ### More
 
