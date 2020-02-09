@@ -6,4 +6,4 @@
 
 Add full map image here!!
 
-<img src="images/P4_thumb.PNG?raw=true"/>
+<img src="images/Demigorgfull.png?raw=true"/>
