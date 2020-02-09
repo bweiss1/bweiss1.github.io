@@ -9,8 +9,8 @@ Using satellite imagery of UMBC campus and ArcMap I identified and classified so
 <img src="images/L2P2_thumb.png?raw=true"/>
 
 ---
-[Project 2: Identifying Volcano Locations on the Western US Coast ](/projects/project2.md)
-<img src="images/P4_thumb.PNG?raw=true"/>
+[Project 2:  ](/projects/project2.md)
+<img src="images/Demigorg.png?raw=true"/>
 
 
 ---
