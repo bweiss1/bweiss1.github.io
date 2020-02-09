@@ -1,7 +1,9 @@
 ## Project 1
 
-**Description:** blah blah
+**Description:** Add Description!!!
 
 ### More
 
-Put an image here.
+Add full Map image here
+
+<img src="images/L2P2_thumb.png?raw=true"/>
