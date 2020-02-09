@@ -1,9 +1,5 @@
 ## Project 1
 
-**Description:** Add Description!!!
+**Description:** I used Arcmap and satellite imagery of UMBC and created polygons, which I then used to represent different zones of infrastructure located on UMBC campus.
 
-### More
-
-Add full Map image here
-
-<img src="images/L2P2_thumb.png?raw=true"/>
+<img src="images/L2P2full.png?raw=true"/>
