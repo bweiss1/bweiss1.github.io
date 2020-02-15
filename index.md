@@ -14,7 +14,7 @@ Using point data of Demigorgon sightings, I mapped Rowan county and displayed th
 <img src="images/Demigorg.png?raw=true"/>
 
 ---
-[Project 3:](/index.html)
+[Project 3:](/)
 Rad stuff
 
 ---
