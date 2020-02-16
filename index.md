@@ -14,8 +14,9 @@ Using point data of Demigorgon sightings, I mapped Rowan county and displayed th
 <img src="images/Demigorg.png?raw=true"/>
 
 ---
-[Project 3:](/qgis2web_2020_02_16-14_27_49_637758)
-Rad stuff
+[Project 3: Fixed Street Camera Locations in Baltimore City, Maryland](/qgis2web_2020_02_16-14_27_49_637758)
+Using open source data from https://data.baltimorecity.gov/ I map a webmap showing the locations of various fixed street cameras in Baltimore City 
+<img src="images/Webmapsnip.png?raw=true"/>
 
 ---
 <p style="font-size:11px">Page template forked from <a href="https://github.com/evanca/quick-portfolio">evanca</a></p>
