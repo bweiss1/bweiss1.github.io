@@ -12,11 +12,14 @@ Baltimore City Line: https://data.baltimorecity.gov/Geographic/Baltimore-City-Li
 
 ## Transformations/Subsets:
 Subsetting Real_Property: USEGROUP to R for Residential
+
 Fix Geometry: Residential Properties
+
 Join: Nearest neighbor with Residential Property
 
 ## Analysis: 
 Nearest neighbor analysis 
+
 Basic Statistics for distance values to determine average distance
 
 ## Outputs:
