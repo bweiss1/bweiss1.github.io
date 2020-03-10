@@ -25,4 +25,13 @@ Basic Statistics for distance values to determine average distance
 ## Outputs:
 I will be creating a couple outputs. First, I will create an output subsetting the unique value of R from the field USEGROUP of Real_Property. Second I will create an output of fixed geometry for the Residential Property subset. Third, I will geocode the Park data from addresses into Lat/Long coordinates to display the data as a point style vector. Fourth, I will run a nearest neighbor analysis from residential propeties to parks in order to determine distance in feet. Fifth, I will be creating an output joining the output of the nearest neighbor analysis and the fixed geometry of residential property. Lastly, I will symbolize the newly joined distance and residential property and symbolize based on distance from nearest park.  
 
+ 
+<img src="images/BmoreDist2Park.png?raw=true"/>
+
+
+
+
+
+
+
 
