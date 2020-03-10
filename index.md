@@ -2,6 +2,9 @@
 
 ---
 
+[Determining average distance of residential properties from parks in Baltimore City, MD](/project1_486/README.md)
+<img src="images/BmoreDist2Park.png?raw=true"/>
+
 ### Past Projects
 
 [Project 1: Georeferencing UMBC's Campus](/projects/project1.md)
