@@ -4,18 +4,18 @@
 Determining average distance of residential properties from parks 
 
 ## Data: 
-Real_Property: http://gis-baltimore.opendata.arcgis.com/datasets/real-property
+__Real_Property:__ http://gis-baltimore.opendata.arcgis.com/datasets/real-property
 
-Parks: https://data.baltimorecity.gov/Culture-Arts/Parks/3r8a-uawz
+__Parks:__ https://data.baltimorecity.gov/Culture-Arts/Parks/3r8a-uawz
 
-Baltimore City Line: https://data.baltimorecity.gov/Geographic/Baltimore-City-Line/fy7v-tvcr
+__Baltimore City__ Line: https://data.baltimorecity.gov/Geographic/Baltimore-City-Line/fy7v-tvcr
 
 ## Transformations/Subsets:
-Subsetting Real_Property: USEGROUP to R for Residential
+__Subsetting Real_Property:__ USEGROUP to R for Residential
 
-Fix Geometry: Residential Properties
+__Fix Geometry:__ Residential Properties
 
-Join: Nearest neighbor with Residential Property
+__Join:__ Nearest neighbor with Residential Property
 
 ## Analysis: 
 Nearest neighbor analysis 
