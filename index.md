@@ -21,6 +21,11 @@ Using point data of Demigorgon sightings, I mapped Rowan county and displayed th
 Using open source data from https://data.baltimorecity.gov/ I map a webmap showing the locations of various fixed street cameras in Baltimore City 
 <img src="images/Webmapsnip.png?raw=true"/>
 
+
+[Project 4: Distribution of Tweets across the US about COVID-19 and Netflix](/qgis2web_2020_03_24-13_51_21_790622)
+Using r and a package called rtweet, I retrieved 10,000 tweets for both COVID-19 and Netflix from users and then plotted their position by state in the US.
+<img src="images/webmapsnip.PNG?raw=true"/>
+
 ---
 <p style="font-size:11px">Page template forked from <a href="https://github.com/evanca/quick-portfolio">evanca</a></p>
 <!-- Remove above link if you don't want to attibute -->
