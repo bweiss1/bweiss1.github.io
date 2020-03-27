@@ -22,9 +22,9 @@ Using open source data from https://data.baltimorecity.gov/ I map a webmap showi
 <img src="images/Webmapsnip.png?raw=true"/>
 
 
-[Project 4: Distribution of Tweets across the US about COVID-19 and Netflix](/qgis2web_2020_03_24-13_51_21_790622)
-Using r and a package called rtweet, I retrieved 10,000 tweets for both COVID-19 and Netflix from users and then plotted their position by state in the US.
-<img src="images/webmapsnip.PNG?raw=true"/>
+[Project 4: Distribution of Tweets across the US about COVID-19 and Netflix](/qgis2web_2020_03_27-18_49_33_525749)
+Using r and a package called rtweet, I retrieved 10,000 tweets for both COVID-19 and Netflix from users over the course of March 24-27th and then determined the amount of tweets per capita. Negative numbers represent areas with more netflix heavy tweets and positive numbers represent areas with more covid19 heavy tweets. Point distributions of covid19 and netflix are available through the layer manager and legend at the top right.
+<img src="images/webmapsnip2.PNG?raw=true"/>
 
 ---
 <p style="font-size:11px">Page template forked from <a href="https://github.com/evanca/quick-portfolio">evanca</a></p>
