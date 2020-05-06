@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet-svg-shape-markers.min.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/statesdiss_1.js"></script>
+        <script src="data/quakestates_2.js"></script>
+        <script src="data/EnergyReleasedMegajoules_3.js"></script>
+        <script src="data/Epicenter_4.js"></script>
+        <script src="data/ANSSStations_5.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[37.27530233286969,-78.8948111097447],[39.80122956612289,-73.84102123385033]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        var layer_GoogleSatellite_0 = L.tileLayer('http://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 22
+        });
+        layer_GoogleSatellite_0;
+        map.addLayer(layer_GoogleSatellite_0);
+        function pop_statesdiss_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['STATEFP'] !== null ? Autolinker.link(feature.properties['STATEFP'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['STATENS'] !== null ? Autolinker.link(feature.properties['STATENS'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['AFFGEOID'] !== null ? Autolinker.link(feature.properties['AFFGEOID'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['GEOID'] !== null ? Autolinker.link(feature.properties['GEOID'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['STUSPS'] !== null ? Autolinker.link(feature.properties['STUSPS'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NAME'] !== null ? Autolinker.link(feature.properties['NAME'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['LSAD'] !== null ? Autolinker.link(feature.properties['LSAD'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ALAND'] !== null ? Autolinker.link(feature.properties['ALAND'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['AWATER'] !== null ? Autolinker.link(feature.properties['AWATER'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_statesdiss_1_0() {
+            return {
+                pane: 'pane_statesdiss_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.6)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(247,153,58,0.6)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_statesdiss_1');
+        map.getPane('pane_statesdiss_1').style.zIndex = 401;
+        map.getPane('pane_statesdiss_1').style['mix-blend-mode'] = 'normal';
+        var layer_statesdiss_1 = new L.geoJson(json_statesdiss_1, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_statesdiss_1',
+            layerName: 'layer_statesdiss_1',
+            pane: 'pane_statesdiss_1',
+            onEachFeature: pop_statesdiss_1,
+            style: style_statesdiss_1_0,
+        });
+        bounds_group.addLayer(layer_statesdiss_1);
+        map.addLayer(layer_statesdiss_1);
+        function pop_quakestates_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['STATEFP'] !== null ? Autolinker.link(feature.properties['STATEFP'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['STATENS'] !== null ? Autolinker.link(feature.properties['STATENS'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['AFFGEOID'] !== null ? Autolinker.link(feature.properties['AFFGEOID'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['GEOID'] !== null ? Autolinker.link(feature.properties['GEOID'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['STUSPS'] !== null ? Autolinker.link(feature.properties['STUSPS'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NAME'] !== null ? Autolinker.link(feature.properties['NAME'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['LSAD'] !== null ? Autolinker.link(feature.properties['LSAD'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ALAND'] !== null ? Autolinker.link(feature.properties['ALAND'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['AWATER'] !== null ? Autolinker.link(feature.properties['AWATER'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_quakestates_2_0() {
+            return {
+                pane: 'pane_quakestates_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(245,13,13,0.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_quakestates_2');
+        map.getPane('pane_quakestates_2').style.zIndex = 402;
+        map.getPane('pane_quakestates_2').style['mix-blend-mode'] = 'normal';
+        var layer_quakestates_2 = new L.geoJson(json_quakestates_2, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_quakestates_2',
+            layerName: 'layer_quakestates_2',
+            pane: 'pane_quakestates_2',
+            onEachFeature: pop_quakestates_2,
+            style: style_quakestates_2_0,
+        });
+        bounds_group.addLayer(layer_quakestates_2);
+        map.addLayer(layer_quakestates_2);
+        function pop_EnergyReleasedMegajoules_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['time'] !== null ? Autolinker.link(feature.properties['time'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['latitude'] !== null ? Autolinker.link(feature.properties['latitude'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['longitude'] !== null ? Autolinker.link(feature.properties['longitude'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['depth'] !== null ? Autolinker.link(feature.properties['depth'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['mag'] !== null ? Autolinker.link(feature.properties['mag'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['E_MJ'] !== null ? Autolinker.link(feature.properties['E_MJ'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['magType'] !== null ? Autolinker.link(feature.properties['magType'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['nst'] !== null ? Autolinker.link(feature.properties['nst'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['gap'] !== null ? Autolinker.link(feature.properties['gap'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['dmin'] !== null ? Autolinker.link(feature.properties['dmin'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['rms'] !== null ? Autolinker.link(feature.properties['rms'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['net'] !== null ? Autolinker.link(feature.properties['net'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(feature.properties['id'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['updated'] !== null ? Autolinker.link(feature.properties['updated'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['place'] !== null ? Autolinker.link(feature.properties['place'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['type'] !== null ? Autolinker.link(feature.properties['type'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['horizontalError'] !== null ? Autolinker.link(feature.properties['horizontalError'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['depthError'] !== null ? Autolinker.link(feature.properties['depthError'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['magError'] !== null ? Autolinker.link(feature.properties['magError'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['magNst'] !== null ? Autolinker.link(feature.properties['magNst'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['status'] !== null ? Autolinker.link(feature.properties['status'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['locationSource'] !== null ? Autolinker.link(feature.properties['locationSource'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['magSource'] !== null ? Autolinker.link(feature.properties['magSource'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_EnergyReleasedMegajoules_3_0(feature) {
+            if (feature.properties['E_MJ'] >= 692.000000 && feature.properties['E_MJ'] <= 692.000000 ) {
+                return {
+                pane: 'pane_EnergyReleasedMegajoules_3',
+                radius: 2.0,
+                opacity: 1,
+                color: 'rgba(240,16,34,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(219,30,42,0.0)',
+                interactive: false,
+            }
+            }
+            if (feature.properties['E_MJ'] >= 692.000000 && feature.properties['E_MJ'] <= 964.000000 ) {
+                return {
+                pane: 'pane_EnergyReleasedMegajoules_3',
+                radius: 7.6,
+                opacity: 1,
+                color: 'rgba(240,16,34,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(219,30,42,0.0)',
+                interactive: false,
+            }
+            }
+            if (feature.properties['E_MJ'] >= 964.000000 && feature.properties['E_MJ'] <= 1694.000000 ) {
+                return {
+                pane: 'pane_EnergyReleasedMegajoules_3',
+                radius: 13.2,
+                opacity: 1,
+                color: 'rgba(240,16,34,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(219,30,42,0.0)',
+                interactive: false,
+            }
+            }
+            if (feature.properties['E_MJ'] >= 1694.000000 && feature.properties['E_MJ'] <= 3924.333333 ) {
+                return {
+                pane: 'pane_EnergyReleasedMegajoules_3',
+                radius: 18.8,
+                opacity: 1,
+                color: 'rgba(240,16,34,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(219,30,42,0.0)',
+                interactive: false,
+            }
+            }
+            if (feature.properties['E_MJ'] >= 3924.333333 && feature.properties['E_MJ'] <= 26546.000000 ) {
+                return {
+                pane: 'pane_EnergyReleasedMegajoules_3',
+                radius: 24.4,
+                opacity: 1,
+                color: 'rgba(240,16,34,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(219,30,42,0.0)',
+                interactive: false,
+            }
+            }
+            if (feature.properties['E_MJ'] >= 26546.000000 && feature.properties['E_MJ'] <= 39084089.580000 ) {
+                return {
+                pane: 'pane_EnergyReleasedMegajoules_3',
+                radius: 30.0,
+                opacity: 1,
+                color: 'rgba(240,16,34,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(219,30,42,0.0)',
+                interactive: false,
+            }
+            }
+        }
+        map.createPane('pane_EnergyReleasedMegajoules_3');
+        map.getPane('pane_EnergyReleasedMegajoules_3').style.zIndex = 403;
+        map.getPane('pane_EnergyReleasedMegajoules_3').style['mix-blend-mode'] = 'normal';
+        var layer_EnergyReleasedMegajoules_3 = new L.geoJson(json_EnergyReleasedMegajoules_3, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_EnergyReleasedMegajoules_3',
+            layerName: 'layer_EnergyReleasedMegajoules_3',
+            pane: 'pane_EnergyReleasedMegajoules_3',
+            onEachFeature: pop_EnergyReleasedMegajoules_3,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_EnergyReleasedMegajoules_3_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_EnergyReleasedMegajoules_3);
+        map.addLayer(layer_EnergyReleasedMegajoules_3);
+        function pop_Epicenter_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>time</strong><br />' + (feature.properties['time'] !== null ? Autolinker.link(feature.properties['time'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>latitude</strong><br />' + (feature.properties['latitude'] !== null ? Autolinker.link(feature.properties['latitude'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>longitude</strong><br />' + (feature.properties['longitude'] !== null ? Autolinker.link(feature.properties['longitude'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>depth</strong><br />' + (feature.properties['depth'] !== null ? Autolinker.link(feature.properties['depth'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>mag</strong><br />' + (feature.properties['mag'] !== null ? Autolinker.link(feature.properties['mag'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>E_MJ</strong><br />' + (feature.properties['E_MJ'] !== null ? Autolinker.link(feature.properties['E_MJ'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Epicenter_4_0() {
+            return {
+                pane: 'pane_Epicenter_4',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,17,25,0.8352941176470589)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Epicenter_4');
+        map.getPane('pane_Epicenter_4').style.zIndex = 404;
+        map.getPane('pane_Epicenter_4').style['mix-blend-mode'] = 'normal';
+        var layer_Epicenter_4 = new L.geoJson(json_Epicenter_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Epicenter_4',
+            layerName: 'layer_Epicenter_4',
+            pane: 'pane_Epicenter_4',
+            onEachFeature: pop_Epicenter_4,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Epicenter_4_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Epicenter_4);
+        map.addLayer(layer_Epicenter_4);
+        function pop_ANSSStations_5(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>Network Code</strong><br />' + (feature.properties['Network Code'] !== null ? Autolinker.link(feature.properties['Network Code'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Station Code</strong><br />' + (feature.properties['Station Code'] !== null ? Autolinker.link(feature.properties['Station Code'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Name</strong><br />' + (feature.properties['Name'] !== null ? Autolinker.link(feature.properties['Name'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Latitude</strong><br />' + (feature.properties['Latitude'] !== null ? Autolinker.link(feature.properties['Latitude'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Longitude</strong><br />' + (feature.properties['Longitude'] !== null ? Autolinker.link(feature.properties['Longitude'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Elevation</strong><br />' + (feature.properties['Elevation'] !== null ? Autolinker.link(feature.properties['Elevation'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ANSSStations_5_0() {
+            return {
+                pane: 'pane_ANSSStations_5',
+                shape: 'triangle',
+                radius: 12.0,
+                opacity: 1,
+                color: 'rgba(12,20,11,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(84,176,74,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ANSSStations_5');
+        map.getPane('pane_ANSSStations_5').style.zIndex = 405;
+        map.getPane('pane_ANSSStations_5').style['mix-blend-mode'] = 'normal';
+        var layer_ANSSStations_5 = new L.geoJson(json_ANSSStations_5, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ANSSStations_5',
+            layerName: 'layer_ANSSStations_5',
+            pane: 'pane_ANSSStations_5',
+            onEachFeature: pop_ANSSStations_5,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.shapeMarker(latlng, style_ANSSStations_5_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_ANSSStations_5);
+        map.addLayer(layer_ANSSStations_5);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/ANSSStations_5.png" /> ANSS Stations': layer_ANSSStations_5,'<img src="legend/Epicenter_4.png" /> Epicenter': layer_Epicenter_4,'Energy Released (Megajoules)<br /><table><tr><td style="text-align: center;"><img src="legend/EnergyReleasedMegajoules_3_6926920.png" /></td><td>692 - 692</td></tr><tr><td style="text-align: center;"><img src="legend/EnergyReleasedMegajoules_3_6929641.png" /></td><td>692 - 964</td></tr><tr><td style="text-align: center;"><img src="legend/EnergyReleasedMegajoules_3_96416942.png" /></td><td>964 - 1,694</td></tr><tr><td style="text-align: center;"><img src="legend/EnergyReleasedMegajoules_3_169439243.png" /></td><td>1694 - 3,924</td></tr><tr><td style="text-align: center;"><img src="legend/EnergyReleasedMegajoules_3_3924265464.png" /></td><td>3924 - 26,546</td></tr><tr><td style="text-align: center;"><img src="legend/EnergyReleasedMegajoules_3_26546390840905.png" /></td><td>26546 - 39,084,090</td></tr></table>': layer_EnergyReleasedMegajoules_3,'<img src="legend/quakestates_2.png" /> quakestates': layer_quakestates_2,'<img src="legend/statesdiss_1.png" /> statesdiss': layer_statesdiss_1,"Google Satellite": layer_GoogleSatellite_0,}).addTo(map);
+        setBounds();
+        resetLabels([layer_quakestates_2]);
+        map.on("zoomend", function(){
+            resetLabels([layer_quakestates_2]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_quakestates_2]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_quakestates_2]);
+        });
+        </script>
+    </body>
+</html>
