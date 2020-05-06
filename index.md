@@ -1,5 +1,8 @@
 ## Portfolio
 
+[Visualizing Earthquakes in the mid-Atlantic 1990-2020 (Webmap)](/MGQuakeWeb)
+<img src="images/IDWMag.png?raw=true"/>
+
 ---
 [United States Population Density from 2010-2018](/Webmap1)
 <img src="images/popdens.gif?raw=true"/>
