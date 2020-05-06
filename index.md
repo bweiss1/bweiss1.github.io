@@ -1,6 +1,6 @@
 ## Portfolio
 
-[Visualizing Earthquakes in the mid-Atlantic 1990-2020 (Webmap)](/MGQuakeWeb)
+[Visualizing Earthquakes in the mid-Atlantic 1990-2020 (Webmap)](/MDQuakeWeb)
 <img src="images/IDWMag.png?raw=true"/>
 
 ---
