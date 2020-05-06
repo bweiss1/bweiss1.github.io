@@ -1,7 +1,7 @@
 ## Portfolio
 
 ---
-[United States Population Desnity from 2010-2018](/Webmap1)
+[United States Population Density from 2010-2018](/Webmap1)
 <img src="images/popdens.gif?raw=true"/>
 
 
