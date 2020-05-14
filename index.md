@@ -1,6 +1,7 @@
 ## Portfolio
 
 [Visualizing Earthquakes in the mid-Atlantic 1990-2020 (Webmap)](/MDQuakeWeb)
+Using Earthquake data from USGS acquired in the midatlantic in the years 1990-2020, I wanted to show the distribution of earthquakes accross the landscape, as well as visualize the magnitude and energy released. The map below shows the magnitude of the earthquakes represented as a continuous surface across the vicinity of the occurance area as well as the epicenter locations of each quake and the year it occured. If you click the link above the map, it will bring you to a webmap which offers interactive popups and quakes are symbolized by the amount of energy released in Megajoules.
 <img src="images/IDWMag.png?raw=true"/>
 
 ---
